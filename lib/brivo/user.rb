@@ -5,7 +5,6 @@ module Brivo
       attr_accessor :application
 
       def create first_name:, last_name:, external_id: nil, suspended: false
-        # TODO probably raise error if application isn't set
         application.create_user(first_name, last_name, external_id, suspended)
       end
     end

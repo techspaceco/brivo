@@ -5,7 +5,6 @@ module Brivo
       attr_accessor :application
 
       def create name:
-        # TODO probably raise error if application isn't set
         application.create_group(name)
       end
     end
