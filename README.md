@@ -1,8 +1,6 @@
 # Brivo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/brivo`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+API wrapper for the [Brivo API](http://apidocs.brivo.com/)
 
 ## Installation
 
@@ -21,8 +19,42 @@ Or install it yourself as:
     $ gem install brivo
 
 ## Usage
+```
+client = Brivo::Application.new(
+  client_id: YOUR_CLIENT_ID,
+  secret: YOUR_SECRET,
+  api_key: YOUR_API_KEY,
+  username: YOUR_USERNAME,
+  password: YOUR_PASSWORD
+)
 
-TODO: Write usage instructions here
+# Create a user
+client.user.create(
+  first_name: 'First name',
+  last_name: 'last name',
+  external_id: 1
+)
+
+# Get all users
+client.users
+
+# Find a user
+client.user(id)
+
+# Create a group
+client.group.create(
+  name: 'Group name'
+)
+
+# Get all groups
+client.groups
+
+# Find a group
+group = client.group(id)
+
+# Assign a user to a group
+group.assign_user(user_id)
+```
 
 ## Development
 
@@ -38,4 +70,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
