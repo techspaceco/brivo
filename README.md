@@ -12,14 +12,19 @@ gem 'brivo'
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install brivo
+```
+$ gem install brivo
+```
 
 ## Usage
-```
+
+```ruby
 client = Brivo::Application.new(
   client_id: YOUR_CLIENT_ID,
   secret: YOUR_SECRET,
@@ -64,7 +69,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/brivo.
+Bug reports and pull requests are welcome on GitHub at https://github.com/techspaceco/brivo
 
 
 ## License
