@@ -64,7 +64,6 @@ module Brivo
           # http://apidocs.brivo.com/#response-codes
           case response.code.to_i
           when 200
-            qq JSON.parse(response.body)
             JSON.parse(response.body)
           when 204
             true
