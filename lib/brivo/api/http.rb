@@ -73,6 +73,8 @@ module Brivo
             raise Brivo::Unauthorized
           when 403
             raise Brivo::Forbidden
+          when 404
+            raise Brivo::NotFound
           when 415
             raise Brivo::UnsupportedMediaType
           when 503

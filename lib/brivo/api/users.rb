@@ -35,6 +35,10 @@ module Brivo
         user_class.new(user_json)
       end
 
+      def delete_user id
+        http_request "users/#{id}", method: :delete
+      end
+
       def user_assign_credential user_id, credential_id, effective_from, effective_to
         http_request(
           "users/#{user_id}/credentials/#{credential_id}",

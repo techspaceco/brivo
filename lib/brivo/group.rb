@@ -14,6 +14,10 @@ module Brivo
       @name = attributes['name']
     end
 
+    def delete
+      application.delete_group(id)
+    end
+
     def users
       application.group_users(id)
     end

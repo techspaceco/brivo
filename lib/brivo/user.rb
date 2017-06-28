@@ -17,6 +17,10 @@ module Brivo
       @suspended = attributes['suspended']
     end
 
+    def delete
+      application.delete_user(id)
+    end
+
     def groups
       application.user_groups(id)
     end

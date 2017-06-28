@@ -30,7 +30,7 @@ module Brivo
 
       def create_group name
         group_json = http_request(
-          'users',
+          'groups',
           params: {
             name: name
           },
@@ -38,6 +38,10 @@ module Brivo
         )
 
         group_class.new(group_json)
+      end
+
+      def delete_group id
+        http_request "groups/#{id}", method: :delete
       end
 
       private
