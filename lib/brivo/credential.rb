@@ -8,7 +8,7 @@ module Brivo
 
     def initialize attributes = {}
       @id = attributes['id']
-      @reference_id = attributes['referenceId'].to_i
+      @reference_id = attributes['referenceId']
     end
 
     def delete

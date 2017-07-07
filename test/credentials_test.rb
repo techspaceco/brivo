@@ -12,7 +12,7 @@ class CredentialsTest < Minitest::Test
       credential = credentials.first
       assert credential.is_a? Brivo::Credential
       assert credential.id.is_a? Integer
-      assert credential.reference_id.is_a? Integer
+      assert credential.reference_id.is_a? String
     end
   end
 
