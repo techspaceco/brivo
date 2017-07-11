@@ -11,6 +11,11 @@ module Brivo
         Brivo::Collection.new(self, "groups/#{group_id}/users", user_class)
       end
 
+      def credential_user credential_id
+        user_json = http_request("credentials/#{credential_id}/user")
+        user_class.new(user_json)
+      end
+
       def user id = nil
         if id
           user_json = http_request "users/#{id}"

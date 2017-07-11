@@ -24,6 +24,14 @@ class CredentialsTest < Minitest::Test
     end
   end
 
+  def test_credential_user
+    VCR.use_cassette(:credential_user) do
+      credentials = brivo_client.credentials(status: :assigned)
+
+      assert credentials.first.user.is_a? Brivo::User
+    end
+  end
+
   def test_list_unassigned_credentials
     VCR.use_cassette(:unassigned_credentials) do
       credentials = brivo_client.credentials(status: :unassigned)

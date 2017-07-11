@@ -15,6 +15,10 @@ module Brivo
       application.delete_credential(id)
     end
 
+    def user
+      application.credential_user(id)
+    end
+
     private
 
     def application
