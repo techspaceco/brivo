@@ -30,6 +30,19 @@ class UsersTest < Minitest::Test
     end
   end
 
+  def test_find_user_external_id
+    VCR.use_cassette(:find_user_external_id) do
+      created_user = brivo_user
+      user = brivo_client.user(created_user.id)
+
+      assert user.is_a? Brivo::User
+      assert_equal FIRST_NAME, user.first_name
+      assert_equal LAST_NAME, user.last_name
+      assert_equal false, user.suspended
+      assert_equal created_user.id, user.id
+    end
+  end
+
   def test_delete_user
     VCR.use_cassette(:delete_user) do
       user = brivo_user
@@ -74,7 +87,8 @@ class UsersTest < Minitest::Test
   def brivo_user
     brivo_client.user.create(
       first_name: FIRST_NAME,
-      last_name: LAST_NAME
+      last_name: LAST_NAME,
+      external_id: 1
     )
   end
 end

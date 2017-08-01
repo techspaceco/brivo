@@ -16,9 +16,12 @@ module Brivo
         user_class.new(user_json)
       end
 
-      def user id = nil
+      def user id = nil, external_id: nil
         if id
           user_json = http_request "users/#{id}"
+          user_class.new(user_json)
+        elsif external_id
+          user_json = http_request "users/#{external_id}/external"
           user_class.new(user_json)
         else
           user_class
