@@ -75,6 +75,8 @@ module Brivo
             raise Brivo::Forbidden
           when 404
             raise Brivo::NotFound
+          when 418
+            raise Brivo::TeapotError
           when 415
             raise Brivo::UnsupportedMediaType
           when 503
