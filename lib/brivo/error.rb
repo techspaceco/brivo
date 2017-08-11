@@ -7,5 +7,5 @@ module Brivo
   class ServiceUnavailable < StandardError; end
   class ServiceNotFound < StandardError; end
   class UnkownResponse < StandardError; end
-  class TeapotError < StandardError; end
+  class IsATeapot < StandardError; end
 end
