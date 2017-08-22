@@ -28,7 +28,7 @@ module Brivo
         end
       end
 
-      def create_user first_name, last_name, external_id, suspended
+      def create_user first_name, last_name, external_id, suspended = false
         user_json = http_request(
           'users',
           params: {
