@@ -48,7 +48,7 @@ module Brivo::TestClient
       api_key: ENV['TEST_BRIVO_API_KEY'],
       username: ENV['TEST_BRIVO_USERNAME'],
       password: ENV['TEST_BRIVO_PASSWORD']
-   )
+    )
   end
 end
 
