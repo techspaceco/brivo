@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Brivo
   class User
     attr_reader :id, :first_name, :last_name, :external_id, :suspended

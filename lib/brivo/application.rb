@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Brivo
   class Application
     include Brivo::API::Users

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Brivo
   class Credential
     attr_reader :id, :reference_id
