@@ -1,11 +1,13 @@
-require 'test_helper'
+require_relative 'test_helper'
+require 'date'
 
 class CredentialsTest < Minitest::Test
-  # TODO: Add ability to create credentials because at the moment these tests
-  #       are dependent on there being credentials in Brivo or the cassette yml
-  #       files existing
+  FIRST_NAME = 'first'
+  LAST_NAME = 'last'
+
   def test_list_credentials
     VCR.use_cassette(:credentials) do
+      unassigned_credential
       credentials = brivo_client.credentials
       assert credentials.is_a? Brivo::Collection
 
@@ -26,9 +28,9 @@ class CredentialsTest < Minitest::Test
 
   def test_credential_user
     VCR.use_cassette(:credential_user) do
-      credentials = brivo_client.credentials(status: :assigned)
+      credential = assigned_credential
 
-      assert credentials.first.user.is_a? Brivo::User
+      assert credential.user.is_a? Brivo::User
     end
   end
 
@@ -42,12 +44,49 @@ class CredentialsTest < Minitest::Test
 
   def test_delete_credential
     VCR.use_cassette(:delete_credential) do
-      credential = brivo_client.credentials(status: :unassigned).first
+      credential = unassigned_credential
 
       assert credential.delete
       assert_raises Brivo::NotFound do
         brivo_client.credential(credential.id)
       end
     end
+  end
+
+  private
+
+  def assigned_credential
+    credential = unassigned_credential
+
+    brivo_user.assign_credential(credential.id, Date.today, Date.today >> 1 )
+    credential
+  end
+
+  def unassigned_credential
+    id = '200'
+    facility_code = '1'
+    credentials = brivo_client.credentials.each do |credential|
+      delete_credential = credential.field_values.any? do |field_value|
+        field_value[:name] == 'acs.cards.format.card_number' && field_value[:value] == id
+      end
+
+      credential.delete if delete_credential
+    end
+
+    brivo_client.credential.create(id: id, facility_code: facility_code)
+  end
+
+  def brivo_user
+    begin
+      user = brivo_client.user(external_id: 1)
+      user.delete
+    rescue Brivo::NotFound
+    end
+
+    brivo_client.user.create(
+      first_name: FIRST_NAME,
+      last_name: LAST_NAME,
+      external_id: 1
+    )
   end
 end

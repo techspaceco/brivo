@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://auth.brivo.com/oauth/token?grant_type=password&password=<password>&username=<username>
+    uri: https://auth.brivo.com/oauth/token?grant_type=password&password=brivo_password&username=brivo_username
     body:
       encoding: UTF-8
       string: ''
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 16 Jul 2017 23:29:22 GMT
+      - Thu, 31 Aug 2017 17:16:55 GMT
       Expires:
       - '0'
       Pragma:
@@ -57,15 +57,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"access_token":"<access token>","token_type":"bearer","refresh_token":"<refresh
-        token>","expires_in":59,"scope":"brivo.api","jti":"33210d05-804d-4d45-be6d-79e81d33da1b"}'
+        token>","expires_in":59,"scope":"brivo.api","jti":"09409506-9e05-4234-9a8b-985aa9e56062"}'
     http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:22 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:56 GMT
 - request:
-    method: post
-    uri: https://api.brivo.com/v1/api/users
+    method: get
+    uri: https://api.brivo.com/v1/api/users/1/external
     body:
       encoding: UTF-8
-      string: '{"firstName":"first","lastName":"last","externalId":null,"suspended":false}'
+      string: "{}"
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -87,13 +87,13 @@ http_interactions:
       message: OK
     headers:
       Brivo-Api-Version:
-      - 1.15.0-53
+      - 1.18.1-5
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 16 Jul 2017 23:29:22 GMT
+      - Thu, 31 Aug 2017 17:16:55 GMT
       Expires:
       - '0'
       Pragma:
@@ -107,18 +107,132 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-131.mashery.com
+      - prod-j-worker-us-east-1e-126.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '71'
+      - '106'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":14948696,"firstName":"first","lastName":"last","suspended":false}'
+      string: '{"id":15429359,"externalId":"1","firstName":"first","lastName":"last","suspended":false,"customFields":[]}'
     http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:22 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:57 GMT
+- request:
+    method: delete
+    uri: https://api.brivo.com/v1/api/users/15429359
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.brivo.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - bearer <access token>
+      Api-Key:
+      - "<api key>"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Brivo-Api-Version:
+      - 1.18.1-5
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Date:
+      - Thu, 31 Aug 2017 17:16:56 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Application-Context:
+      - api:default,api03-prod:8080
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-121.mashery.com
+      X-Xss-Protection:
+      - 1; mode=block
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 31 Aug 2017 17:16:57 GMT
+- request:
+    method: post
+    uri: https://api.brivo.com/v1/api/users
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"first","lastName":"last","externalId":1,"suspended":false}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.brivo.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - bearer <access token>
+      Api-Key:
+      - "<api key>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Brivo-Api-Version:
+      - 1.18.1-5
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 31 Aug 2017 17:16:57 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Application-Context:
+      - api:default,api02-prod:8080
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-133.mashery.com
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":15429360,"externalId":"1","firstName":"first","lastName":"last","suspended":false}'
+    http_version: 
+  recorded_at: Thu, 31 Aug 2017 17:16:57 GMT
 - request:
     method: get
     uri: https://api.brivo.com/v1/api/users?offset=0&pageSize=100
@@ -146,13 +260,13 @@ http_interactions:
       message: OK
     headers:
       Brivo-Api-Version:
-      - 1.15.0-53
+      - 1.18.1-5
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 16 Jul 2017 23:29:23 GMT
+      - Thu, 31 Aug 2017 17:16:57 GMT
       Expires:
       - '0'
       Pragma:
@@ -166,18 +280,18 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-117.mashery.com
+      - prod-j-worker-us-east-1b-112.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '7713'
+      - '8417'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":14608001,"externalId":"4","firstName":"fsdfsdfdsf","lastName":"asdasdsad","suspended":false},{"id":14671598,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671599,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671600,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671601,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671602,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671603,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671604,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671605,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671606,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671607,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671608,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671610,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671611,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671612,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671613,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671614,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671615,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671616,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671617,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14671618,"firstName":"test","lastName":"fdssdfsf","suspended":false},{"id":14740510,"externalId":"1696","firstName":"fgfdgfdg","lastName":"fgfdgfdg","suspended":false},{"id":14759863,"externalId":"1700","firstName":"fsffsd","lastName":"fsdad","suspended":false},{"id":14833488,"externalId":"1707","firstName":"Test","lastName":"fsdfdfffgdgfg","suspended":false},{"id":14833499,"externalId":"1709","firstName":"Test","lastName":"fsdfdfffgdgfgf","suspended":false},{"id":14833495,"externalId":"1708","firstName":"Test","lastName":"fsdfdfffgdgfgfsdfsdf","suspended":false},{"id":14833478,"externalId":"1705","firstName":"Test","lastName":"fsdfdsffsdfsdf","suspended":false},{"id":14833482,"externalId":"1706","firstName":"Test","lastName":"fsdfdsffsdfsdffdsfsdfsdf","suspended":false},{"id":14570547,"firstName":"dsfsdfsdf","lastName":"fsdfsdfdsf","suspended":false},{"id":14732179,"externalId":"1694","firstName":"fsdfsdfsdf","lastName":"fsdfsdfsdf","suspended":false},{"id":14758196,"externalId":"1698","firstName":"fsdfsdfsdf","lastName":"fsdfsdfsdf","suspended":false},{"id":14759865,"externalId":"1701","firstName":"fsdfdsf","lastName":"fwwqwd","suspended":false},{"id":14758619,"externalId":"1699","firstName":"gfdgdf","lastName":"gfdgdf","suspended":false},{"id":14758195,"externalId":"1697","firstName":"fsdfsdffdsf","lastName":"gfdgdfg","suspended":false},{"id":14669982,"firstName":"gdfgdgdg","lastName":"gfdgdfga","suspended":false},{"id":14669992,"firstName":"gdfgdgdg","lastName":"gfdgdfga","suspended":false},{"id":14669999,"firstName":"gdfgdgdg","lastName":"gfdgdfga","suspended":false},{"id":14775891,"firstName":"first","lastName":"last","suspended":false},{"id":14776044,"firstName":"first","lastName":"last","suspended":false},{"id":14786007,"firstName":"first","lastName":"last","suspended":false},{"id":14787492,"firstName":"first","lastName":"last","suspended":false},{"id":14787495,"firstName":"first","lastName":"last","suspended":false},{"id":14787528,"firstName":"first","lastName":"last","suspended":false},{"id":14787530,"firstName":"first","lastName":"last","suspended":false},{"id":14792313,"firstName":"first","lastName":"last","suspended":false},{"id":14792318,"firstName":"first","lastName":"last","suspended":false},{"id":14792379,"firstName":"first","lastName":"last","suspended":false},{"id":14792718,"firstName":"first","lastName":"last","suspended":false},{"id":14793148,"firstName":"first","lastName":"last","suspended":false},{"id":14793161,"firstName":"first","lastName":"last","suspended":false},{"id":14793163,"firstName":"first","lastName":"last","suspended":false},{"id":14793164,"firstName":"first","lastName":"last","suspended":false},{"id":14793166,"firstName":"first","lastName":"last","suspended":false},{"id":14793173,"firstName":"first","lastName":"last","suspended":false},{"id":14793291,"firstName":"first","lastName":"last","suspended":false},{"id":14948421,"firstName":"first","lastName":"last","suspended":false},{"id":14948422,"firstName":"first","lastName":"last","suspended":false},{"id":14948423,"firstName":"first","lastName":"last","suspended":false},{"id":14948424,"firstName":"first","lastName":"last","suspended":false},{"id":14948430,"firstName":"first","lastName":"last","suspended":false},{"id":14948432,"firstName":"first","lastName":"last","suspended":false},{"id":14948433,"firstName":"first","lastName":"last","suspended":false},{"id":14948435,"firstName":"first","lastName":"last","suspended":false},{"id":14948436,"firstName":"first","lastName":"last","suspended":false},{"id":14948441,"firstName":"first","lastName":"last","suspended":false},{"id":14948445,"firstName":"first","lastName":"last","suspended":false},{"id":14948449,"firstName":"first","lastName":"last","suspended":false},{"id":14948451,"firstName":"first","lastName":"last","suspended":false},{"id":14948452,"firstName":"first","lastName":"last","suspended":false},{"id":14948453,"firstName":"first","lastName":"last","suspended":false},{"id":14948456,"firstName":"first","lastName":"last","suspended":false},{"id":14948460,"firstName":"first","lastName":"last","suspended":false},{"id":14948462,"firstName":"first","lastName":"last","suspended":false},{"id":14948463,"firstName":"first","lastName":"last","suspended":false},{"id":14948464,"firstName":"first","lastName":"last","suspended":false},{"id":14948471,"firstName":"first","lastName":"last","suspended":false},{"id":14948472,"firstName":"first","lastName":"last","suspended":false},{"id":14948473,"firstName":"first","lastName":"last","suspended":false},{"id":14948475,"firstName":"first","lastName":"last","suspended":false},{"id":14948476,"firstName":"first","lastName":"last","suspended":false},{"id":14948477,"firstName":"first","lastName":"last","suspended":false},{"id":14948478,"firstName":"first","lastName":"last","suspended":false},{"id":14948480,"firstName":"first","lastName":"last","suspended":false},{"id":14948488,"firstName":"first","lastName":"last","suspended":false},{"id":14948489,"firstName":"first","lastName":"last","suspended":false},{"id":14948490,"firstName":"first","lastName":"last","suspended":false},{"id":14948491,"firstName":"first","lastName":"last","suspended":false},{"id":14948493,"firstName":"first","lastName":"last","suspended":false},{"id":14948498,"firstName":"first","lastName":"last","suspended":false},{"id":14948499,"firstName":"first","lastName":"last","suspended":false},{"id":14948500,"firstName":"first","lastName":"last","suspended":false},{"id":14948503,"firstName":"first","lastName":"last","suspended":false},{"id":14948504,"firstName":"first","lastName":"last","suspended":false},{"id":14948509,"firstName":"first","lastName":"last","suspended":false},{"id":14948512,"firstName":"first","lastName":"last","suspended":false},{"id":14948513,"firstName":"first","lastName":"last","suspended":false},{"id":14948516,"firstName":"first","lastName":"last","suspended":false},{"id":14948517,"firstName":"first","lastName":"last","suspended":false},{"id":14948535,"firstName":"first","lastName":"last","suspended":false},{"id":14948537,"firstName":"first","lastName":"last","suspended":false}],"offset":0,"pageSize":100,"count":261}'
+      string: '{"data":[{"id":15150324,"externalId":"32","firstName":"Paul","lastName":"Alexander","suspended":false},{"id":15150254,"externalId":"1549","firstName":"Niall","lastName":"Aye-maung","suspended":false},{"id":15150223,"externalId":"1248","firstName":"Andy","lastName":"Bellass","suspended":false},{"id":15150224,"externalId":"1256","firstName":"Dan","lastName":"Benatan","suspended":false},{"id":15150315,"externalId":"1045","firstName":"Matt","lastName":"Blewitt","suspended":false},{"id":15150305,"externalId":"1107","firstName":"Jan","lastName":"Bohnhorst","suspended":false},{"id":15150259,"externalId":"1804","firstName":"Dan","lastName":"Botterill","suspended":false},{"id":15150258,"externalId":"1805","firstName":"Rob","lastName":"Bresler","suspended":false},{"id":15150336,"externalId":"1819","firstName":"Steph","lastName":"Brisson","suspended":false},{"id":15150286,"externalId":"1721","firstName":"Camille","lastName":"Brunette","suspended":false},{"id":15150309,"externalId":"1817","firstName":"Katrina","lastName":"Clark","suspended":false},{"id":15150231,"externalId":"1257","firstName":"Leanne","lastName":"Clements","suspended":false},{"id":15150316,"externalId":"1697","firstName":"Matthew","lastName":"Constantinou","suspended":false},{"id":15150327,"externalId":"1516","firstName":"Philip","lastName":"Cumner","suspended":false},{"id":15150283,"externalId":"1696","firstName":"Andrew","lastName":"Cuthbertson","suspended":false},{"id":15150245,"externalId":"1251","firstName":"Timor","lastName":"Davara","suspended":false},{"id":15150238,"externalId":"1253","firstName":"Peter","lastName":"Davies","suspended":false},{"id":15150244,"externalId":"1249","firstName":"Tamsin","lastName":"Davies","suspended":false},{"id":15150323,"externalId":"1650","firstName":"Max","lastName":"Devlin","suspended":false},{"id":15150326,"externalId":"2","firstName":"Phil","lastName":"Ellis","suspended":false},{"id":15150308,"externalId":"1269","firstName":"Kari","lastName":"Fernandes","suspended":false},{"id":15150300,"externalId":"973","firstName":"Jamie","lastName":"Fitzgerald","suspended":false},{"id":15150267,"externalId":"1024","firstName":"Abigail","lastName":"Freeman","suspended":false},{"id":15150288,"externalId":"75","firstName":"David","lastName":"Galsworthy","suspended":false},{"id":15150261,"externalId":"1803","firstName":"Nick","lastName":"Garrod","suspended":false},{"id":15150332,"externalId":"993","firstName":"Shane","lastName":"Hanna","suspended":false},{"id":15150242,"externalId":"1262","firstName":"Rupert","lastName":"Harden","suspended":false},{"id":15150287,"externalId":"1397","firstName":"Chris","lastName":"Hooper","suspended":false},{"id":15150284,"externalId":"964","firstName":"Ban","lastName":"Ibrahim","suspended":false},{"id":15150264,"externalId":"1838","firstName":"Barbora","lastName":"Kvackova","suspended":false},{"id":15150227,"externalId":"1259","firstName":"Ed","lastName":"Kyei","suspended":false},{"id":15359324,"firstName":"first","lastName":"last","suspended":false},{"id":15359352,"firstName":"first","lastName":"last","suspended":false},{"id":15411447,"firstName":"first","lastName":"last","suspended":false},{"id":15413396,"firstName":"first","lastName":"last","suspended":false},{"id":15413521,"firstName":"first","lastName":"last","suspended":false},{"id":15413591,"firstName":"first","lastName":"last","suspended":false},{"id":15415705,"firstName":"first","lastName":"last","suspended":false},{"id":15415722,"firstName":"first","lastName":"last","suspended":false},{"id":15415756,"firstName":"first","lastName":"last","suspended":false},{"id":15415785,"firstName":"first","lastName":"last","suspended":false},{"id":15415952,"firstName":"first","lastName":"last","suspended":false},{"id":15415968,"firstName":"first","lastName":"last","suspended":false},{"id":15415992,"firstName":"first","lastName":"last","suspended":false},{"id":15422050,"firstName":"first","lastName":"last","suspended":false},{"id":15423277,"firstName":"first","lastName":"last","suspended":false},{"id":15423309,"firstName":"first","lastName":"last","suspended":false},{"id":15424338,"firstName":"first","lastName":"last","suspended":false},{"id":15424427,"firstName":"first","lastName":"last","suspended":false},{"id":15424434,"firstName":"first","lastName":"last","suspended":false},{"id":15424457,"firstName":"first","lastName":"last","suspended":false},{"id":15424466,"firstName":"first","lastName":"last","suspended":false},{"id":15424494,"firstName":"first","lastName":"last","suspended":false},{"id":15424511,"firstName":"first","lastName":"last","suspended":false},{"id":15424617,"firstName":"first","lastName":"last","suspended":false},{"id":15424651,"firstName":"first","lastName":"last","suspended":false},{"id":15424662,"firstName":"first","lastName":"last","suspended":false},{"id":15424674,"firstName":"first","lastName":"last","suspended":false},{"id":15424693,"firstName":"first","lastName":"last","suspended":false},{"id":15424711,"firstName":"first","lastName":"last","suspended":false},{"id":15424733,"firstName":"first","lastName":"last","suspended":false},{"id":15424748,"firstName":"first","lastName":"last","suspended":false},{"id":15425173,"firstName":"first","lastName":"last","suspended":false},{"id":15425254,"firstName":"first","lastName":"last","suspended":false},{"id":15425264,"firstName":"first","lastName":"last","suspended":false},{"id":15425309,"firstName":"first","lastName":"last","suspended":false},{"id":15425322,"firstName":"first","lastName":"last","suspended":false},{"id":15425339,"firstName":"first","lastName":"last","suspended":false},{"id":15425365,"firstName":"first","lastName":"last","suspended":false},{"id":15425468,"firstName":"first","lastName":"last","suspended":false},{"id":15425477,"firstName":"first","lastName":"last","suspended":false},{"id":15425561,"firstName":"first","lastName":"last","suspended":false},{"id":15425569,"firstName":"first","lastName":"last","suspended":false},{"id":15425602,"firstName":"first","lastName":"last","suspended":false},{"id":15425626,"firstName":"first","lastName":"last","suspended":false},{"id":15425737,"firstName":"first","lastName":"last","suspended":false},{"id":15425789,"firstName":"first","lastName":"last","suspended":false},{"id":15428750,"firstName":"first","lastName":"last","suspended":false},{"id":15428888,"firstName":"first","lastName":"last","suspended":false},{"id":15429360,"externalId":"1","firstName":"first","lastName":"last","suspended":false},{"id":15150234,"externalId":"1258","firstName":"Mike","lastName":"Lobb","suspended":false},{"id":15150330,"externalId":"1698","firstName":"Rudie","lastName":"Masukume","suspended":false},{"id":15150252,"externalId":"1807","firstName":"Tom","lastName":"McKinnon","suspended":false},{"id":15150265,"externalId":"1835","firstName":"Carly","lastName":"McNally","suspended":false},{"id":15150266,"externalId":"1836","firstName":"Nathan","lastName":"McNally","suspended":false},{"id":15150291,"externalId":"992","firstName":"Erik","lastName":"Meert","suspended":false},{"id":15150279,"externalId":"1105","firstName":"Amanda","lastName":"Neanor","suspended":false},{"id":15150337,"externalId":"1694","firstName":"Yasmin","lastName":"Nouichi","suspended":false},{"id":15150311,"externalId":"1704","firstName":"Kenzia","lastName":"Okolo","suspended":false},{"id":15150229,"externalId":"1260","firstName":"Jame","lastName":"Page","suspended":false},{"id":15150230,"externalId":"1250","firstName":"Joanna","lastName":"Pardo","suspended":false},{"id":15150237,"externalId":"1254","firstName":"Natasha","lastName":"Pawade","suspended":false},{"id":15150247,"externalId":"1246","firstName":"Tom","lastName":"Pickett","suspended":false},{"id":15150235,"externalId":"1252","firstName":"Monica","lastName":"Ponte","suspended":false},{"id":15150248,"externalId":"1261","firstName":"Tom","lastName":"Prichard","suspended":false},{"id":15150271,"externalId":"487","firstName":"Adam","lastName":"Rainsby","suspended":false},{"id":15150328,"externalId":"1661","firstName":"Rob","lastName":"Ryan","suspended":false},{"id":15150295,"externalId":"1463","firstName":"Guste","lastName":"Sadaunykaite","suspended":false},{"id":15150239,"externalId":"1247","firstName":"Rosie","lastName":"Smith","suspended":false},{"id":15150255,"externalId":"1550","firstName":"Robert","lastName":"Stevenson","suspended":false}],"offset":0,"pageSize":100,"count":112}'
     http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:23 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:58 GMT
 - request:
     method: get
     uri: https://api.brivo.com/v1/api/users?offset=100&pageSize=100
@@ -205,13 +319,13 @@ http_interactions:
       message: OK
     headers:
       Brivo-Api-Version:
-      - 1.15.0-53
+      - 1.18.1-5
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 16 Jul 2017 23:29:23 GMT
+      - Thu, 31 Aug 2017 17:16:58 GMT
       Expires:
       - '0'
       Pragma:
@@ -225,75 +339,16 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-127.mashery.com
+      - prod-j-worker-us-east-1d-119.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '7491'
+      - '1175'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":14948538,"firstName":"first","lastName":"last","suspended":false},{"id":14948540,"firstName":"first","lastName":"last","suspended":false},{"id":14948546,"firstName":"first","lastName":"last","suspended":false},{"id":14948551,"firstName":"first","lastName":"last","suspended":false},{"id":14948552,"firstName":"first","lastName":"last","suspended":false},{"id":14948554,"firstName":"first","lastName":"last","suspended":false},{"id":14948555,"firstName":"first","lastName":"last","suspended":false},{"id":14948561,"firstName":"first","lastName":"last","suspended":false},{"id":14948576,"firstName":"first","lastName":"last","suspended":false},{"id":14948581,"firstName":"first","lastName":"last","suspended":false},{"id":14948583,"firstName":"first","lastName":"last","suspended":false},{"id":14948584,"firstName":"first","lastName":"last","suspended":false},{"id":14948585,"firstName":"first","lastName":"last","suspended":false},{"id":14948591,"firstName":"first","lastName":"last","suspended":false},{"id":14948594,"firstName":"first","lastName":"last","suspended":false},{"id":14948595,"firstName":"first","lastName":"last","suspended":false},{"id":14948596,"firstName":"first","lastName":"last","suspended":false},{"id":14948598,"firstName":"first","lastName":"last","suspended":false},{"id":14948605,"firstName":"first","lastName":"last","suspended":false},{"id":14948607,"firstName":"first","lastName":"last","suspended":false},{"id":14948609,"firstName":"first","lastName":"last","suspended":false},{"id":14948610,"firstName":"first","lastName":"last","suspended":false},{"id":14948611,"firstName":"first","lastName":"last","suspended":false},{"id":14948615,"firstName":"first","lastName":"last","suspended":false},{"id":14948619,"firstName":"first","lastName":"last","suspended":false},{"id":14948620,"firstName":"first","lastName":"last","suspended":false},{"id":14948622,"firstName":"first","lastName":"last","suspended":false},{"id":14948623,"firstName":"first","lastName":"last","suspended":false},{"id":14948628,"firstName":"first","lastName":"last","suspended":false},{"id":14948631,"firstName":"first","lastName":"last","suspended":false},{"id":14948634,"firstName":"first","lastName":"last","suspended":false},{"id":14948635,"firstName":"first","lastName":"last","suspended":false},{"id":14948636,"firstName":"first","lastName":"last","suspended":false},{"id":14948641,"firstName":"first","lastName":"last","suspended":false},{"id":14948642,"firstName":"first","lastName":"last","suspended":false},{"id":14948643,"firstName":"first","lastName":"last","suspended":false},{"id":14948645,"firstName":"first","lastName":"last","suspended":false},{"id":14948651,"firstName":"first","lastName":"last","suspended":false},{"id":14948653,"firstName":"first","lastName":"last","suspended":false},{"id":14948655,"firstName":"first","lastName":"last","suspended":false},{"id":14948656,"firstName":"first","lastName":"last","suspended":false},{"id":14948657,"firstName":"first","lastName":"last","suspended":false},{"id":14948661,"firstName":"first","lastName":"last","suspended":false},{"id":14948666,"firstName":"first","lastName":"last","suspended":false},{"id":14948669,"firstName":"first","lastName":"last","suspended":false},{"id":14948670,"firstName":"first","lastName":"last","suspended":false},{"id":14948671,"firstName":"first","lastName":"last","suspended":false},{"id":14948674,"firstName":"first","lastName":"last","suspended":false},{"id":14948675,"firstName":"first","lastName":"last","suspended":false},{"id":14948677,"firstName":"first","lastName":"last","suspended":false},{"id":14948678,"firstName":"first","lastName":"last","suspended":false},{"id":14948679,"firstName":"first","lastName":"last","suspended":false},{"id":14948681,"firstName":"first","lastName":"last","suspended":false},{"id":14948682,"firstName":"first","lastName":"last","suspended":false},{"id":14948684,"firstName":"first","lastName":"last","suspended":false},{"id":14948693,"firstName":"first","lastName":"last","suspended":false},{"id":14948694,"firstName":"first","lastName":"last","suspended":false},{"id":14948696,"firstName":"first","lastName":"last","suspended":false},{"id":14582028,"externalId":"487","firstName":"Adam","lastName":"Rainsby","suspended":false},{"id":14733485,"externalId":"1695","firstName":"brivo","lastName":"test","suspended":false},{"id":14673102,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673103,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673104,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673105,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673106,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673107,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673108,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673109,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673110,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673111,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673112,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673113,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673114,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673115,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673116,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673117,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673118,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673120,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673121,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673122,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673123,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673124,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673125,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673126,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673127,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673128,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673129,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673130,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673131,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673132,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673133,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673134,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673135,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673136,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673137,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673138,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673139,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673141,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673142,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673143,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false}],"offset":100,"pageSize":100,"count":261}'
+      string: '{"data":[{"id":15150220,"externalId":"1816","firstName":"Alyson","lastName":"Sturgess","suspended":false},{"id":15150335,"externalId":"1695","firstName":"Sophie","lastName":"Taylor","suspended":false},{"id":15150312,"externalId":"1810","firstName":"Lee","lastName":"Threadgold","suspended":false},{"id":15150232,"externalId":"1245","firstName":"Louisa","lastName":"Tratalos","suspended":false},{"id":15150263,"externalId":"1806","firstName":"Rick","lastName":"Turner","suspended":false},{"id":15150250,"externalId":"352","firstName":"James","lastName":"Vincent","suspended":false},{"id":15150226,"externalId":"1441","firstName":"David","lastName":"Vine","suspended":false},{"id":15150270,"externalId":"1392","firstName":"Adam","lastName":"Ward","suspended":false},{"id":15150251,"externalId":"368","firstName":"Tom","lastName":"Warren","suspended":false},{"id":15150219,"externalId":"1255","firstName":"Alex","lastName":"Weddell","suspended":false},{"id":15150275,"externalId":"921","firstName":"Alfie","lastName":"White","suspended":false},{"id":15150297,"externalId":"1393","firstName":"James","lastName":"Youle","suspended":false}],"offset":100,"pageSize":100,"count":112}'
     http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:23 GMT
-- request:
-    method: get
-    uri: https://api.brivo.com/v1/api/users?offset=200&pageSize=100
-    body:
-      encoding: UTF-8
-      string: "{}"
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - api.brivo.com
-      Content-Type:
-      - application/json
-      Authorization:
-      - bearer <access token>
-      Api-Key:
-      - "<api key>"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Brivo-Api-Version:
-      - 1.15.0-53
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Sun, 16 Jul 2017 23:29:23 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Server:
-      - Mashery Proxy
-      X-Application-Context:
-      - api:default,api01-prod:8080
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-      X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-113.mashery.com
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '4763'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"data":[{"id":14673144,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673145,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673146,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673147,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673148,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673149,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673150,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673151,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673152,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673153,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673154,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673155,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673156,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673157,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673158,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673159,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673160,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673161,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673162,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673163,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673164,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673165,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673167,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673168,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673169,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673170,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673171,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673172,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673174,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673175,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673176,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673177,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673179,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673180,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673181,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673182,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673183,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673184,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673185,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673186,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673187,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673188,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673189,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673191,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673193,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673194,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673195,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673196,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673197,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673198,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673199,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673200,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673201,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673202,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673203,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673204,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673205,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673207,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673208,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14673209,"firstName":"fsfsdfsgfg","lastName":"test","suspended":false},{"id":14868249,"externalId":"1803","firstName":"DueDil","lastName":"User","suspended":false}],"offset":200,"pageSize":100,"count":261}'
-    http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:24 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:58 GMT
 recorded_with: VCR 3.0.3

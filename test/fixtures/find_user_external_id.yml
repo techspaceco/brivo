@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://auth.brivo.com/oauth/token?grant_type=password&password=<password>&username=<username>
+    uri: https://auth.brivo.com/oauth/token?grant_type=password&password=brivo_password&username=brivo_username
     body:
       encoding: UTF-8
       string: ''
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 01 Aug 2017 17:32:01 GMT
+      - Thu, 31 Aug 2017 17:16:54 GMT
       Expires:
       - '0'
       Pragma:
@@ -57,9 +57,123 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"access_token":"<access token>","token_type":"bearer","refresh_token":"<refresh
-        token>","expires_in":59,"scope":"brivo.api","jti":"f4de72fb-8268-479f-90e8-1290aa3fda2f"}'
+        token>","expires_in":59,"scope":"brivo.api","jti":"8eb9acbc-45b8-4c43-98f1-ce57c6e4430e"}'
     http_version: 
-  recorded_at: Tue, 01 Aug 2017 17:32:01 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:55 GMT
+- request:
+    method: get
+    uri: https://api.brivo.com/v1/api/users/1/external
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.brivo.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - bearer <access token>
+      Api-Key:
+      - "<api key>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Brivo-Api-Version:
+      - 1.18.1-5
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 31 Aug 2017 17:16:54 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Application-Context:
+      - api:default,api03-prod:8080
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-134.mashery.com
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '106'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":15429358,"externalId":"1","firstName":"first","lastName":"last","suspended":false,"customFields":[]}'
+    http_version: 
+  recorded_at: Thu, 31 Aug 2017 17:16:55 GMT
+- request:
+    method: delete
+    uri: https://api.brivo.com/v1/api/users/15429358
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.brivo.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - bearer <access token>
+      Api-Key:
+      - "<api key>"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Brivo-Api-Version:
+      - 1.18.1-5
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Date:
+      - Thu, 31 Aug 2017 17:16:54 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Mashery Proxy
+      X-Application-Context:
+      - api:default,api02-prod:8080
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-123.mashery.com
+      X-Xss-Protection:
+      - 1; mode=block
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 31 Aug 2017 17:16:55 GMT
 - request:
     method: post
     uri: https://api.brivo.com/v1/api/users
@@ -87,13 +201,13 @@ http_interactions:
       message: OK
     headers:
       Brivo-Api-Version:
-      - 1.17.0-1
+      - 1.18.1-5
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 01 Aug 2017 17:32:01 GMT
+      - Thu, 31 Aug 2017 17:16:55 GMT
       Expires:
       - '0'
       Pragma:
@@ -101,13 +215,13 @@ http_interactions:
       Server:
       - Mashery Proxy
       X-Application-Context:
-      - api:default,api02-prod:8080
+      - api:default,api01-prod:8080
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-123.mashery.com
+      - prod-j-worker-us-east-1b-109.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -116,12 +230,12 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":15099980,"externalId":"1","firstName":"first","lastName":"last","suspended":false}'
+      string: '{"id":15429359,"externalId":"1","firstName":"first","lastName":"last","suspended":false}'
     http_version: 
-  recorded_at: Tue, 01 Aug 2017 17:32:01 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:56 GMT
 - request:
     method: get
-    uri: https://api.brivo.com/v1/api/users/15099980
+    uri: https://api.brivo.com/v1/api/users/15429359
     body:
       encoding: UTF-8
       string: "{}"
@@ -146,13 +260,13 @@ http_interactions:
       message: OK
     headers:
       Brivo-Api-Version:
-      - 1.17.0-1
+      - 1.18.1-5
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 01 Aug 2017 17:32:01 GMT
+      - Thu, 31 Aug 2017 17:16:55 GMT
       Expires:
       - '0'
       Pragma:
@@ -166,7 +280,7 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-128.mashery.com
+      - prod-j-worker-us-east-1e-120.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -175,7 +289,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":15099980,"externalId":"1","firstName":"first","lastName":"last","suspended":false,"customFields":[]}'
+      string: '{"id":15429359,"externalId":"1","firstName":"first","lastName":"last","suspended":false,"customFields":[]}'
     http_version: 
-  recorded_at: Tue, 01 Aug 2017 17:32:02 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:56 GMT
 recorded_with: VCR 3.0.3

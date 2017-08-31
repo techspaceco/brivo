@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative 'test_helper'
 require 'date'
 
 class UsersTest < Minitest::Test
@@ -85,6 +85,12 @@ class UsersTest < Minitest::Test
   private
 
   def brivo_user
+    begin
+      user = brivo_client.user(external_id: 1)
+      user.delete
+    rescue Brivo::NotFound
+    end
+
     brivo_client.user.create(
       first_name: FIRST_NAME,
       last_name: LAST_NAME,

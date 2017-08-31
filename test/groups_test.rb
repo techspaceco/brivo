@@ -1,8 +1,8 @@
-require 'test_helper'
+require_relative 'test_helper'
 
 class GroupsTest < Minitest::Test
   NAME = 'group'
-
+  
   def test_create_group
     VCR.use_cassette(:create_group) do
       group = brivo_group

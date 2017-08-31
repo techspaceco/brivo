@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://auth.brivo.com/oauth/token?grant_type=password&password=<password>&username=<username>
+    uri: https://auth.brivo.com/oauth/token?grant_type=password&password=brivo_password&username=brivo_username
     body:
       encoding: UTF-8
       string: ''
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 16 Jul 2017 23:29:10 GMT
+      - Thu, 31 Aug 2017 17:16:58 GMT
       Expires:
       - '0'
       Pragma:
@@ -57,9 +57,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"access_token":"<access token>","token_type":"bearer","refresh_token":"<refresh
-        token>","expires_in":59,"scope":"brivo.api","jti":"330f0cab-2ba6-4e1b-b32b-c82df61002db"}'
+        token>","expires_in":59,"scope":"brivo.api","jti":"a67f2e96-eb46-4469-8f1c-cd67facbba6a"}'
     http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:11 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:58 GMT
 - request:
     method: post
     uri: https://api.brivo.com/v1/api/groups
@@ -87,13 +87,13 @@ http_interactions:
       message: OK
     headers:
       Brivo-Api-Version:
-      - 1.15.0-53
+      - 1.18.1-5
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 16 Jul 2017 23:29:10 GMT
+      - Thu, 31 Aug 2017 17:16:59 GMT
       Expires:
       - '0'
       Pragma:
@@ -107,7 +107,7 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-122.mashery.com
+      - prod-j-worker-us-east-1d-125.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -116,7 +116,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":14948690,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
+      string: '{"id":15429362,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
     http_version: 
-  recorded_at: Sun, 16 Jul 2017 23:29:11 GMT
+  recorded_at: Thu, 31 Aug 2017 17:16:59 GMT
 recorded_with: VCR 3.0.3

@@ -3,6 +3,8 @@ module Brivo
     module Credentials
       include Brivo::API::HTTP
 
+      FORMAT_NAME = 'Standard 26 Bit'
+
       def credentials(status: nil)
         path = 'credentials'
         path += "?filter=status__eq:#{status}" if status
@@ -20,6 +22,30 @@ module Brivo
         else
           credential_class
         end
+      end
+
+      def create_credential id, facility_code
+        @credential_formats ||= http_request('credentials/formats')['data']
+        credential_format = @credential_formats.find do |format|
+          format['name'] == FORMAT_NAME
+        end
+
+        credential_json = http_request(
+          'credentials',
+          params: {
+            credentialFormat: {
+              id: credential_format['id']
+            },
+            referenceId: id,
+            fieldValues: [
+              {id: 1, value: id},
+              {id: 2, value: facility_code}
+            ]
+          },
+          method: :post
+        )
+
+        credential_class.new(credential_json)
       end
 
       def delete_credential id
