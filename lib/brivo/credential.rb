@@ -13,7 +13,7 @@ module Brivo
     def initialize attributes = {}
       @id = attributes['id']
       @reference_id = attributes['referenceId']
-      @field_values = attributes['fieldValues'].map do |field_value|
+      @field_values = attributes['fieldValues']&.map do |field_value|
         field_value.inject({}) do |m, (k, v)|
           m.tap { m[k.to_sym] = v }
         end
