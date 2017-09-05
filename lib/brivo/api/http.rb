@@ -61,10 +61,6 @@ module Brivo
             https.request(request)
           end
 
-          require 'pp'
-          if response.code.to_i == 400
-            pp response.body
-          end
           # http://apidocs.brivo.com/#response-codes
           case response.code.to_i
           when 200
