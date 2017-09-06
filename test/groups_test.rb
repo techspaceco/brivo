@@ -2,7 +2,7 @@ require_relative 'test_helper'
 
 class GroupsTest < Minitest::Test
   NAME = 'group'
-  
+
   def test_create_group
     VCR.use_cassette(:create_group) do
       group = brivo_group
@@ -29,7 +29,7 @@ class GroupsTest < Minitest::Test
       group = brivo_group
       assert group.delete
 
-      assert_raises Brivo::NotFound do
+      assert_raises Brivo::Error::NotFound do
         brivo_client.group(group.id)
       end
     end

@@ -47,7 +47,7 @@ class CredentialsTest < Minitest::Test
       credential = unassigned_credential
 
       assert credential.delete
-      assert_raises Brivo::NotFound do
+      assert_raises Brivo::Error::NotFound do
         brivo_client.credential(credential.id)
       end
     end
@@ -80,7 +80,7 @@ class CredentialsTest < Minitest::Test
     begin
       user = brivo_client.user(external_id: 1)
       user.delete
-    rescue Brivo::NotFound
+    rescue Brivo::Error::NotFound
     end
 
     brivo_client.user.create(

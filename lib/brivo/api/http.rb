@@ -72,23 +72,23 @@ module Brivo
           when 204
             true
           when 400
-            raise Brivo::BadRequest
+            raise Brivo::Error::BadRequest
           when 401
-            raise Brivo::Unauthorized
+            raise Brivo::Error::Unauthorized
           when 403
-            raise Brivo::Forbidden
+            raise Brivo::Error::Forbidden
           when 404
-            raise Brivo::NotFound
+            raise Brivo::Error::NotFound
           when 418
-            raise Brivo::IsATeapot
+            raise Brivo::Error::IsATeapot
           when 415
-            raise Brivo::UnsupportedMediaType
+            raise Brivo::Error::UnsupportedMediaType
           when 503
-            raise Brivo::ServiceUnavailable
+            raise Brivo::Error::ServiceUnavailable
           when 596
-            raise Brivo::ServiceNotFound
+            raise Brivo::Error::ServiceNotFound
           else
-            raise Brivo::UnkownResponse
+            raise Brivo::Error::UnkownResponse
           end
         rescue StandardError
           if attempts > MAX_RETRIES
