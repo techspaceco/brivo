@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 module Brivo
-  class BadRequest < StandardError; end
-  class Unauthorized < StandardError; end
-  class Forbidden < StandardError; end
-  class NotFound < StandardError; end
-  class UnsupportedMediaType < StandardError; end
-  class ServiceUnavailable < StandardError; end
-  class ServiceNotFound < StandardError; end
-  class UnkownResponse < StandardError; end
-  class IsATeapot < StandardError; end
+  class Error < StandardError
+    class BadRequest < Error; end
+    class Unauthorized < Error; end
+    class Forbidden < Error; end
+    class NotFound < Error; end
+    class UnsupportedMediaType < Error; end
+    class ServiceUnavailable < Error; end
+    class ServiceNotFound < Error; end
+    class UnkownResponse < Error; end
+    class IsATeapot < Error; end
+  end
 end
