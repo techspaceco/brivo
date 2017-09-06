@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Brivo
   class BadRequest < StandardError; end
   class Unauthorized < StandardError; end

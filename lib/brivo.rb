@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'brivo/version'
 require 'brivo/error'
 require 'brivo/user'
