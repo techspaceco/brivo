@@ -4,6 +4,7 @@ require 'brivo'
 require 'minitest/autorun'
 require 'webmock/minitest'
 require 'vcr'
+require 'qq'
 
 TEST_BRIVO_CLIENT_ID = ENV['TEST_BRIVO_CLIENT_ID'] || 'client_id'
 TEST_BRIVO_SECRET = ENV['TEST_BRIVO_SECRET'] || 'secret'

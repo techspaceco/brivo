@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 31 Aug 2017 17:16:58 GMT
+      - Wed, 13 Sep 2017 14:50:24 GMT
       Expires:
       - '0'
       Pragma:
@@ -50,16 +50,16 @@ http_interactions:
       - DENY
       X-Xss-Protection:
       - 1; mode=block
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1441'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: '{"access_token":"<access token>","token_type":"bearer","refresh_token":"<refresh
-        token>","expires_in":59,"scope":"brivo.api","jti":"a67f2e96-eb46-4469-8f1c-cd67facbba6a"}'
+        token>","expires_in":59,"scope":"brivo.api","jti":"ec6a05de-8c83-4cdf-8373-15607b90fdfa"}'
     http_version: 
-  recorded_at: Thu, 31 Aug 2017 17:16:58 GMT
+  recorded_at: Wed, 13 Sep 2017 14:50:25 GMT
 - request:
     method: post
     uri: https://api.brivo.com/v1/api/groups
@@ -93,7 +93,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 31 Aug 2017 17:16:59 GMT
+      - Wed, 13 Sep 2017 14:50:25 GMT
       Expires:
       - '0'
       Pragma:
@@ -101,13 +101,13 @@ http_interactions:
       Server:
       - Mashery Proxy
       X-Application-Context:
-      - api:default,api03-prod:8080
+      - api:default,api01-prod:8080
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-125.mashery.com
+      - prod-j-worker-us-east-1b-109.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -116,7 +116,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":15429362,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
+      string: '{"id":15540765,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
     http_version: 
-  recorded_at: Thu, 31 Aug 2017 17:16:59 GMT
+  recorded_at: Wed, 13 Sep 2017 14:50:25 GMT
 recorded_with: VCR 3.0.3

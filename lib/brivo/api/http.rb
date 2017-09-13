@@ -60,7 +60,9 @@ module Brivo
             request = http_methods[method].new(parsed_uri)
             request.body = params.to_json
 
-            set_access_token if monotonic_time > @access_token_expiry
+            if @access_token.nil? || monotonic_time > @access_token_expiry
+              set_access_token
+            end
 
             request['Content-Type'] = 'application/json'
             request['Authorization'] = "bearer #{@access_token}"

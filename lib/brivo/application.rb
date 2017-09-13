@@ -14,8 +14,6 @@ module Brivo
       @api_key = api_key
       @username = username
       @password = password
-
-      set_access_token
     end
   end
 end

@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 31 Aug 2017 17:17:01 GMT
+      - Wed, 13 Sep 2017 14:50:27 GMT
       Expires:
       - '0'
       Pragma:
@@ -50,16 +50,16 @@ http_interactions:
       - DENY
       X-Xss-Protection:
       - 1; mode=block
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1441'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: '{"access_token":"<access token>","token_type":"bearer","refresh_token":"<refresh
-        token>","expires_in":59,"scope":"brivo.api","jti":"9ef3b25d-e5d7-4004-84f9-758317315cca"}'
+        token>","expires_in":59,"scope":"brivo.api","jti":"6c8d0656-30d5-401c-a9c4-61e03922586c"}'
     http_version: 
-  recorded_at: Thu, 31 Aug 2017 17:17:02 GMT
+  recorded_at: Wed, 13 Sep 2017 14:50:28 GMT
 - request:
     method: post
     uri: https://api.brivo.com/v1/api/groups
@@ -93,7 +93,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 31 Aug 2017 17:17:02 GMT
+      - Wed, 13 Sep 2017 14:50:27 GMT
       Expires:
       - '0'
       Pragma:
@@ -101,13 +101,13 @@ http_interactions:
       Server:
       - Mashery Proxy
       X-Application-Context:
-      - api:default,api02-prod:8080
+      - api:default,api01-prod:8080
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-113.mashery.com
+      - prod-j-worker-us-east-1e-120.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -116,12 +116,12 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":15429368,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
+      string: '{"id":15540769,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
     http_version: 
-  recorded_at: Thu, 31 Aug 2017 17:17:02 GMT
+  recorded_at: Wed, 13 Sep 2017 14:50:28 GMT
 - request:
     method: get
-    uri: https://api.brivo.com/v1/api/groups/15429368
+    uri: https://api.brivo.com/v1/api/groups/15540769
     body:
       encoding: UTF-8
       string: "{}"
@@ -152,7 +152,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 31 Aug 2017 17:17:02 GMT
+      - Wed, 13 Sep 2017 14:50:28 GMT
       Expires:
       - '0'
       Pragma:
@@ -160,13 +160,13 @@ http_interactions:
       Server:
       - Mashery Proxy
       X-Application-Context:
-      - api:default,api03-prod:8080
+      - api:default,api02-prod:8080
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-115.mashery.com
+      - prod-j-worker-us-east-1e-127.mashery.com
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -175,7 +175,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":15429368,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
+      string: '{"id":15540769,"name":"group","keypadUnlock":false,"immuneToAntipassback":false}'
     http_version: 
-  recorded_at: Thu, 31 Aug 2017 17:17:03 GMT
+  recorded_at: Wed, 13 Sep 2017 14:50:28 GMT
 recorded_with: VCR 3.0.3
