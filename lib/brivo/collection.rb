@@ -15,13 +15,13 @@ module Brivo
 
 
     def each(&block)
-      @collection.each(&block)
-
-      while @collection.count < @total_count do
+      total_count = @total_count
+      while @collection.count < total_count do
         collection_count = @collection.count
         fetch_collection(offset: collection_count)
-        @collection.slice(collection_count, @collection.count).each(&block)
       end
+
+      @collection.each(&block)
     end
 
     private
