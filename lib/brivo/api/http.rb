@@ -87,10 +87,10 @@ module Brivo
             raise Brivo::Error::Forbidden
           when 404
             raise Brivo::Error::NotFound
-          when 418
-            raise Brivo::Error::IsATeapot
           when 415
             raise Brivo::Error::UnsupportedMediaType
+          when 418
+            raise Brivo::Error::IsATeapot
           when 503
             raise Brivo::Error::ServiceUnavailable
           when 596
